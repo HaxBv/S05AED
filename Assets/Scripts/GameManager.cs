@@ -38,7 +38,6 @@ public class GameManager : MonoBehaviour
         enemySystem.SaveTurn();
         Debug.Log("Turno Salvado:" + snapshotSystem.pointer.Value.Turn);
 
-        NewTurn?.Invoke();
 
     }
     public void LoadTurn()

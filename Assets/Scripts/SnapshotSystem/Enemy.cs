@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
-        GameManager.instance.NewTurn += Avanzar;
+        GameManager.instance.player.OnMove += Avanzar;
     }
 
     private void Avanzar()
