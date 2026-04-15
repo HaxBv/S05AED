@@ -111,7 +111,7 @@ public class DoubleLinkedList<T> //: MonoBehaviour
             Evaluator = Evaluator.Next;
         }
     }
-
+    //Cambiar a Recursividad
     public void TraverseInOrder(Action<Node<T>> action)
     {
         Node<T> Evaluator = head;
@@ -123,6 +123,23 @@ public class DoubleLinkedList<T> //: MonoBehaviour
             Evaluator = Evaluator.Next;
         }
     }
+    //Recorrido Recursivo InOrder
+    public void RecursiveTraverseInOrder(Node<T> Evaluator, Action<Node<T>> action)
+    {
+
+
+        if (Evaluator == null)
+        {
+            Debug.Log("Terminaste de recorrer la lista");
+            return;
+        }
+        action(Evaluator);
+
+
+        RecursiveTraverseInOrder(Evaluator.Next, action);
+
+    }
+    //Cambiar a Recursividad 
     public void TraverseInReverse(Action<Node<T>> action)
     {
         Node<T> Evaluator = tail;
@@ -133,6 +150,22 @@ public class DoubleLinkedList<T> //: MonoBehaviour
 
             Evaluator = Evaluator.Prev;
         }
+    }
+    //Recorrido Recursivo InReverse
+    public void RecursiveTraverseInReverse(Node<T> Evaluator, Action<Node<T>> action)
+    {
+
+
+        if (Evaluator == null)
+        {
+            Debug.Log("Terminaste de recorrer la lista");
+            return;
+        }
+        action(Evaluator);
+
+
+        RecursiveTraverseInReverse(Evaluator.Prev, action);
+
     }
 
 

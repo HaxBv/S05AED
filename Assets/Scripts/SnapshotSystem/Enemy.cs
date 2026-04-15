@@ -1,14 +1,33 @@
+using System;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public int Life;
+    public int Damage;
+    public int Speed;
+
+
+    public GameObject Target;
+
     void Start()
     {
-        
+        GameManager.instance.NewTurn += Avanzar;
     }
 
-    // Update is called once per frame
+    private void Avanzar()
+    {
+        Vector3 Dir = Target.transform.position - this.transform.position;
+
+        Dir.Normalize();
+
+        this.gameObject.transform.position += Dir * Speed;
+
+
+
+
+    }
+
     void Update()
     {
         

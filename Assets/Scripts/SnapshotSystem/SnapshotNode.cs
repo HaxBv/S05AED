@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class SnapshotNode 
 {
+
     public int Turn;
 
     public Vector3 playerPosition;
@@ -9,6 +10,15 @@ public class SnapshotNode
     public int str;
     public int dtx;
     public int spd;
+
+
+
+    public Vector3 EnemyPosition;
+    public Vector3 EnemyRotation;
+    public int Life;
+    public int Damage;
+    public int Speed;
+
 
     public SnapshotNode(Player player , int turn)
     {
@@ -20,6 +30,16 @@ public class SnapshotNode
         dtx = player.dtx;
         spd = player.spd;
     }
+    public SnapshotNode(Enemy enemy, int turn)
+    {
 
+        Turn = turn;
+
+        playerPosition = enemy.transform.position;
+        playerRotation = enemy.transform.rotation.eulerAngles;
+        Life = enemy.Life;
+        Damage = enemy.Damage;
+        Speed = enemy.Speed;
+    }
     
 }
