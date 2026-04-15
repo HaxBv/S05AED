@@ -90,7 +90,7 @@ public class LinkedList<T> : MonoBehaviour
 
 
     }
-
+    //Recorrido Normal
     public void Traverse(Action<Node<T>> action)
     {
         Node<T> Evaluator = head;
@@ -101,6 +101,24 @@ public class LinkedList<T> : MonoBehaviour
 
             Evaluator = Evaluator.Next; 
         }
+    }
+
+
+    //Recorrido Recursivo
+    public void RecursiveTraverse(Node<T> Evaluator, Action<Node<T>> action)
+    {
+
+
+        if (Evaluator == null)
+        {
+            Debug.Log("Terminaste de recorrer la lista");
+            return;
+        }
+        action(Evaluator);
+
+
+        RecursiveTraverse(Evaluator.Next, action);
+
     }
 
 }
