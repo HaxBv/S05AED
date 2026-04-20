@@ -3,20 +3,23 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
-    public TextMeshProUGUI str;
-    public TextMeshProUGUI dtx;
-    public TextMeshProUGUI spd;
-    /*void Start()
+    public TextMeshProUGUI life;
+    public TextMeshProUGUI damage;
+    public TextMeshProUGUI speed;
+    public TextMeshProUGUI Turn;
+    void Start()
     {
-        /*str.text = $"STR: {GameManager.instance.player.str}";
-        dtx.text = $"DTX: {GameManager.instance.player.dtx}";
-        spd.text = $"SPD: {GameManager.instance.player.spd}";
+        life.text = $"Life: {GameManager.instance.player.Life}";
+        damage.text = $"Damage: {GameManager.instance.player.Damage}";
+        speed.text = $"Speed: {GameManager.instance.player.Speed}";
+        Turn.text = $"Turn: {GameManager.instance.snapshotSystem.Count}";
 
         GameManager.instance.NewTurn += () =>
         {
-            str.text = $"STR: {GameManager.instance.player.str}";
-            dtx.text = $"DTX: {GameManager.instance.player.dtx}";
-            spd.text = $"SPD: {GameManager.instance.player.spd}";
+            life.text = $"Life: {GameManager.instance.player.Life}";
+            damage.text = $"Damage: {GameManager.instance.player.Damage}";
+            speed.text = $"Speed: {GameManager.instance.player.Speed}";
+            Turn.text = $"Turn: {GameManager.instance.snapshotSystem.Count}";
         };
     }
 
@@ -27,5 +30,5 @@ public class UIManager : MonoBehaviour
     public void ChangeStats()
     {
 
-    }*/
+    }
 }

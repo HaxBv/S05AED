@@ -30,6 +30,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         player.OnMove += SaveTurn;
+        player.OnAttack += SaveTurn;
     }
     [Button]
     public void SaveTurn()
@@ -38,13 +39,17 @@ public class GameManager : MonoBehaviour
         enemySystem.SaveTurn();
         Debug.Log("Turno Salvado:" + snapshotSystem.pointer.Value.Turn);
 
+        NewTurn?.Invoke();
+
 
     }
     public void LoadTurn()
     {
         snapshotSystem.LoadTurn(player);
         enemySystem.LoadTurn(enemy);
-      
+
+        NewTurn?.Invoke();
+
     }
     [Button]
     public void NextTurn()

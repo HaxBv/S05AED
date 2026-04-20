@@ -47,8 +47,8 @@ public class EnemyDoubleLinkedList : DoubleLinkedList<SnapshotNode>
     public void LoadTurn(Enemy enemy)
     {
         Debug.Log("Cargando el turno: " + pointer.Value.Turn);
-        enemy.transform.position = pointer.Value.playerPosition;
-        enemy.transform.eulerAngles = pointer.Value.playerRotation;
+        enemy.transform.position = pointer.Value.EnemyPosition;
+        enemy.transform.eulerAngles = pointer.Value.EnemyRotation;
         enemy.Life = pointer.Value.Life;
         enemy.Damage = pointer.Value.Damage;
         enemy.Speed = pointer.Value.Speed;

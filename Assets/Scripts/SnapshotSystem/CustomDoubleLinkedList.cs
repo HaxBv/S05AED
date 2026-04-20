@@ -50,9 +50,13 @@ public class CustomDoubleLinkedList : DoubleLinkedList<SnapshotNode>
         Debug.Log("Cargando el turno: "+ pointer.Value.Turn);
         player.transform.position = pointer.Value.playerPosition;
         player.transform.eulerAngles =  pointer.Value.playerRotation;
-        player.str = pointer.Value.str;
-        player.dtx = pointer.Value.dtx; 
-        player.spd = pointer.Value.spd; 
+        player.Life = pointer.Value.life;
+        player.Damage = pointer.Value.damage; 
+        player.Speed = pointer.Value.speed;
+
+
+
+
 
     }
 
